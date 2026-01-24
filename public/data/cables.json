@@ -1,6 +1,6 @@
 {
-  "version": "1.1.0",
-  "lastUpdated": "2025-01-24",
+  "version": "1.2.0",
+  "lastUpdated": "2026-01-24",
   "source": "Herstellerangaben und ARRL Antenna Book",
   "cables": [
     {
@@ -268,6 +268,7 @@
     { "name": "12m", "frequencyMHz": 24.94, "range": "24,890-24,990 kHz" },
     { "name": "10m", "frequencyMHz": 28.5, "range": "28,000-29,700 kHz" },
     { "name": "6m", "frequencyMHz": 51.0, "range": "50-52 MHz" },
+    { "name": "4m", "frequencyMHz": 70.2, "range": "70.0-70.5 MHz" },
     { "name": "2m", "frequencyMHz": 145.0, "range": "144-146 MHz" },
     { "name": "70cm", "frequencyMHz": 435.0, "range": "430-440 MHz" },
     { "name": "23cm", "frequencyMHz": 1296.0, "range": "1240-1300 MHz" },
