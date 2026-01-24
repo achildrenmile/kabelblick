@@ -24,7 +24,7 @@ const {
   loadData
 } = useCalculator();
 
-const { t, lang, toggleLanguage } = useI18n();
+const { t, lang, setLanguage } = useI18n();
 
 // Legal modal state
 const showLegalModal = ref(false);
@@ -54,9 +54,20 @@ watch(lang, (newLang) => {
           <h1>{{ t('title') }}</h1>
           <p class="subtitle">{{ t('subtitle') }}</p>
         </div>
-        <button class="lang-toggle" @click="toggleLanguage" :title="lang === 'de' ? 'Switch to English' : 'Auf Deutsch wechseln'">
-          {{ lang === 'de' ? 'EN' : 'DE' }}
-        </button>
+        <div class="lang-switch">
+          <button
+            :class="['lang-btn', { active: lang === 'de' }]"
+            @click="setLanguage('de')"
+          >
+            DE
+          </button>
+          <button
+            :class="['lang-btn', { active: lang === 'en' }]"
+            @click="setLanguage('en')"
+          >
+            EN
+          </button>
+        </div>
       </div>
     </header>
 
@@ -163,21 +174,36 @@ watch(lang, (newLang) => {
   color: var(--color-text-muted);
 }
 
-.lang-toggle {
-  padding: 0.5rem 1rem;
-  font-size: 0.9rem;
-  font-weight: 600;
+.lang-switch {
+  display: flex;
   border: 2px solid var(--color-primary);
   border-radius: 6px;
+  overflow: hidden;
+}
+
+.lang-btn {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: none;
   background: transparent;
   color: var(--color-primary);
   cursor: pointer;
   transition: all 0.2s;
 }
 
-.lang-toggle:hover {
+.lang-btn:first-child {
+  border-right: 1px solid var(--color-primary);
+}
+
+.lang-btn:hover:not(.active) {
+  background: var(--color-primary-alpha);
+}
+
+.lang-btn.active {
   background: var(--color-primary);
   color: white;
+  cursor: default;
 }
 
 .main {
