@@ -51,65 +51,65 @@ function formatPower(watts) {
 
 <template>
   <div class="results-display">
-    <!-- Validation errors -->
+    <!-- Validierungsfehler -->
     <div v-if="!validation.isValid" class="validation-errors">
       <p v-for="error in validation.errors" :key="error" class="error">
         {{ error }}
       </p>
     </div>
 
-    <!-- No cable selected -->
+    <!-- Kein Kabel ausgewählt -->
     <div v-else-if="!cable" class="no-data">
-      <p>Select a cable type to see attenuation calculations.</p>
+      <p>Wählen Sie einen Kabeltyp aus, um die Dämpfung zu berechnen.</p>
     </div>
 
-    <!-- Results -->
+    <!-- Ergebnisse -->
     <div v-else-if="results" class="results">
-      <!-- Main attenuation display -->
+      <!-- Hauptanzeige Dämpfung -->
       <div :class="['result-main', lossSeverity]">
         <div class="attenuation-value">
           <span class="value">{{ formatNum(results.totalAttenuationDb, 2) }}</span>
           <span class="unit">dB</span>
         </div>
-        <div class="attenuation-label">Total Attenuation</div>
+        <div class="attenuation-label">Gesamtdämpfung</div>
 
-        <!-- Visual loss bar -->
+        <!-- Visuelle Verlustanzeige -->
         <div class="loss-bar-container">
-          <div
-            class="loss-bar"
-            :style="{ width: `${Math.min(100, results.lossPercent)}%` }"
-          ></div>
           <div
             class="efficiency-bar"
             :style="{ width: `${Math.max(0, results.efficiency)}%` }"
+          ></div>
+          <div
+            class="loss-bar"
+            :style="{ width: `${Math.min(100, results.lossPercent)}%` }"
           ></div>
         </div>
 
         <div class="loss-stats">
           <span class="loss-percent">
-            <strong>{{ formatNum(results.lossPercent, 1) }}%</strong> signal lost
+            <strong>{{ formatNum(results.lossPercent, 1) }}%</strong> Signalverlust
           </span>
           <span class="efficiency-percent">
-            <strong>{{ formatNum(results.efficiency, 1) }}%</strong> reaches antenna
+            <strong>{{ formatNum(results.efficiency, 1) }}%</strong> erreichen Antenne
           </span>
         </div>
       </div>
 
-      <!-- Per 100m reference -->
+      <!-- Dämpfung pro 100m -->
       <div class="result-detail">
-        <span class="detail-label">Attenuation per 100m:</span>
+        <span class="detail-label">Dämpfung pro 100m:</span>
         <span class="detail-value">{{ formatNum(results.dbPer100m, 2) }} dB</span>
       </div>
 
-      <!-- Power table -->
+      <!-- Leistungstabelle -->
       <div class="power-section">
-        <h3>Output Power at Antenna</h3>
+        <h3>Ausgangsleistung an der Antenne</h3>
         <table class="power-table">
           <thead>
             <tr>
-              <th>TX Power</th>
-              <th>At Antenna</th>
-              <th>Lost in Cable</th>
+              <th>TX-Leistung</th>
+              <th>An Antenne</th>
+              <th>Verlust im Kabel</th>
             </tr>
           </thead>
           <tbody>
@@ -122,19 +122,19 @@ function formatPower(watts) {
         </table>
       </div>
 
-      <!-- Summary message -->
+      <!-- Zusammenfassung -->
       <div :class="['summary-message', lossSeverity]">
         <template v-if="lossSeverity === 'excellent'">
-          Excellent! Very low cable losses at this frequency.
+          Ausgezeichnet! Sehr geringe Kabelverluste bei dieser Frequenz.
         </template>
         <template v-else-if="lossSeverity === 'good'">
-          Good performance. Acceptable losses for most applications.
+          Gute Werte. Akzeptable Verluste für die meisten Anwendungen.
         </template>
         <template v-else-if="lossSeverity === 'moderate'">
-          Moderate losses. Consider shorter cable or lower-loss type for VHF/UHF.
+          Mäßige Verluste. Erwägen Sie kürzeres Kabel oder verlustarmen Typ für VHF/UHF.
         </template>
         <template v-else>
-          High losses! Consider upgrading to a lower-loss cable type.
+          Hohe Verluste! Erwägen Sie ein Upgrade auf ein verlustarmes Kabel.
         </template>
       </div>
     </div>

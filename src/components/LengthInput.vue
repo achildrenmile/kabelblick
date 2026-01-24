@@ -37,7 +37,7 @@ function setPreset(length) {
 
 <template>
   <div class="length-input">
-    <label for="length">Cable Length</label>
+    <label for="length">Kabellänge</label>
 
     <div class="input-row">
       <input
@@ -47,7 +47,7 @@ function setPreset(length) {
         min="0"
         max="10000"
         step="0.1"
-        placeholder="Enter length"
+        placeholder="Länge eingeben"
         @input="onInputChange"
         @blur="onInputChange"
       />
@@ -55,7 +55,7 @@ function setPreset(length) {
     </div>
 
     <div class="presets">
-      <span class="presets-label">Quick:</span>
+      <span class="presets-label">Schnellwahl:</span>
       <button
         v-for="preset in presets"
         :key="preset"

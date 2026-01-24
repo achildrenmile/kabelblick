@@ -258,19 +258,19 @@ export function validateInputs({ frequencyMHz, lengthMeters }) {
   const errors = [];
 
   if (frequencyMHz === null || frequencyMHz === undefined || frequencyMHz === '') {
-    errors.push('Frequency is required');
+    errors.push('Frequenz ist erforderlich');
   } else if (isNaN(frequencyMHz) || frequencyMHz <= 0) {
-    errors.push('Frequency must be a positive number');
-  } else if (frequencyMHz > 10000) {
-    errors.push('Frequency must be less than 10 GHz');
+    errors.push('Frequenz muss eine positive Zahl sein');
+  } else if (frequencyMHz > 300000) {
+    errors.push('Frequenz muss unter 300 GHz liegen');
   }
 
   if (lengthMeters === null || lengthMeters === undefined || lengthMeters === '') {
-    errors.push('Cable length is required');
+    errors.push('Kabellänge ist erforderlich');
   } else if (isNaN(lengthMeters) || lengthMeters < 0) {
-    errors.push('Cable length must be a non-negative number');
+    errors.push('Kabellänge muss eine nicht-negative Zahl sein');
   } else if (lengthMeters > 10000) {
-    errors.push('Cable length must be less than 10 km');
+    errors.push('Kabellänge muss unter 10 km liegen');
   }
 
   return {

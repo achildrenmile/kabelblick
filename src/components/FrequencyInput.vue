@@ -1,5 +1,5 @@
 <script setup>
-import { ref, watch } from 'vue';
+import { ref, watch, computed } from 'vue';
 
 const props = defineProps({
   modelValue: {
@@ -41,20 +41,25 @@ function onBandSelect(bandName) {
 }
 
 // Group bands by frequency range for display
-const hfBands = props.bands.filter(b => {
+const hfBands = computed(() => props.bands.filter(b => {
   const freq = b.frequencyMHz;
   return freq >= 1 && freq < 30;
-});
+}));
 
-const vhfUhfBands = props.bands.filter(b => {
+const vhfUhfBands = computed(() => props.bands.filter(b => {
   const freq = b.frequencyMHz;
-  return freq >= 30;
-});
+  return freq >= 30 && freq < 1000;
+}));
+
+const shfBands = computed(() => props.bands.filter(b => {
+  const freq = b.frequencyMHz;
+  return freq >= 1000;
+}));
 </script>
 
 <template>
   <div class="frequency-input">
-    <label for="frequency">Frequency (MHz)</label>
+    <label for="frequency">Frequenz (MHz)</label>
 
     <div class="input-row">
       <input
@@ -62,9 +67,9 @@ const vhfUhfBands = props.bands.filter(b => {
         v-model="inputValue"
         type="number"
         min="0.1"
-        max="10000"
+        max="250000"
         step="0.1"
-        placeholder="Enter frequency"
+        placeholder="Frequenz eingeben"
         @input="onInputChange"
         @blur="onInputChange"
       />
@@ -72,8 +77,8 @@ const vhfUhfBands = props.bands.filter(b => {
     </div>
 
     <div class="band-groups">
-      <div class="band-group">
-        <span class="band-group-label">HF:</span>
+      <div v-if="hfBands.length" class="band-group">
+        <span class="band-group-label">KW:</span>
         <div class="band-buttons">
           <button
             v-for="band in hfBands"
@@ -87,11 +92,26 @@ const vhfUhfBands = props.bands.filter(b => {
         </div>
       </div>
 
-      <div class="band-group">
+      <div v-if="vhfUhfBands.length" class="band-group">
         <span class="band-group-label">VHF/UHF:</span>
         <div class="band-buttons">
           <button
             v-for="band in vhfUhfBands"
+            :key="band.name"
+            :class="['band-btn', { active: selectedBand === band.name }]"
+            :title="band.range"
+            @click="onBandSelect(band.name)"
+          >
+            {{ band.name }}
+          </button>
+        </div>
+      </div>
+
+      <div v-if="shfBands.length" class="band-group">
+        <span class="band-group-label">SHF/EHF:</span>
+        <div class="band-buttons">
+          <button
+            v-for="band in shfBands"
             :key="band.name"
             :class="['band-btn', { active: selectedBand === band.name }]"
             :title="band.range"
@@ -169,7 +189,7 @@ input[type="number"] {
 
 .band-group {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.5rem;
   flex-wrap: wrap;
 }
@@ -178,12 +198,14 @@ input[type="number"] {
   font-size: 0.85rem;
   color: var(--color-text-muted);
   min-width: 60px;
+  padding-top: 0.35rem;
 }
 
 .band-buttons {
   display: flex;
   flex-wrap: wrap;
   gap: 0.25rem;
+  flex: 1;
 }
 
 .band-btn {

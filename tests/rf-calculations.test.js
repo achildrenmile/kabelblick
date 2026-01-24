@@ -278,7 +278,7 @@ describe('validateInputs', () => {
 
   it('rejects very high frequency', () => {
     const result = validateInputs({
-      frequencyMHz: 50000,
+      frequencyMHz: 500000, // 500 GHz, above 300 GHz limit
       lengthMeters: 20
     });
     expect(result.isValid).toBe(false);

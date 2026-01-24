@@ -25,13 +25,13 @@ function onSelect(event) {
 
 <template>
   <div class="cable-selector">
-    <label for="cable-select">Cable Type</label>
+    <label for="cable-select">Kabeltyp</label>
     <select
       id="cable-select"
       :value="modelValue"
       @change="onSelect"
     >
-      <option value="" disabled>Select a cable...</option>
+      <option value="" disabled>Kabel auswählen...</option>
       <option
         v-for="cable in cables"
         :key="cable.id"
@@ -44,7 +44,7 @@ function onSelect(event) {
     <div v-if="selectedCable" class="cable-info">
       <p class="cable-description">{{ selectedCable.description }}</p>
       <p class="cable-velocity">
-        Velocity factor: {{ (selectedCable.velocityFactor * 100).toFixed(0) }}%
+        Verkürzungsfaktor: {{ (selectedCable.velocityFactor * 100).toFixed(0) }}%
       </p>
     </div>
   </div>

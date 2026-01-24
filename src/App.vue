@@ -1,9 +1,11 @@
 <script setup>
+import { ref } from 'vue';
 import { useCalculator } from './composables/useCalculator.js';
 import CableSelector from './components/CableSelector.vue';
 import FrequencyInput from './components/FrequencyInput.vue';
 import LengthInput from './components/LengthInput.vue';
 import ResultsDisplay from './components/ResultsDisplay.vue';
+import LegalModal from './components/LegalModal.vue';
 
 const {
   cables,
@@ -17,32 +19,47 @@ const {
   lengthMeters,
   selectedBandName,
   validation,
-  results
+  results,
+  loadData
 } = useCalculator();
+
+// Legal modal state
+const showLegalModal = ref(false);
+const legalModalType = ref('imprint');
+
+function openImprint() {
+  legalModalType.value = 'imprint';
+  showLegalModal.value = true;
+}
+
+function openPrivacy() {
+  legalModalType.value = 'privacy';
+  showLegalModal.value = true;
+}
 </script>
 
 <template>
   <div class="app">
     <header class="header">
       <h1>Kabelblick</h1>
-      <p class="subtitle">RF Coaxial Cable Attenuation Calculator</p>
+      <p class="subtitle">Koaxialkabel-Dämpfungsrechner für Funkamateure</p>
     </header>
 
     <main class="main">
-      <!-- Loading state -->
+      <!-- Ladezustand -->
       <div v-if="isLoading" class="loading">
-        <p>Loading cable data...</p>
+        <p>Lade Kabeldaten...</p>
       </div>
 
-      <!-- Error state -->
+      <!-- Fehlerzustand -->
       <div v-else-if="loadError" class="error-state">
-        <p>Failed to load cable data: {{ loadError }}</p>
-        <button @click="loadData">Retry</button>
+        <p>Fehler beim Laden der Kabeldaten: {{ loadError }}</p>
+        <button @click="loadData">Erneut versuchen</button>
       </div>
 
-      <!-- Main content -->
+      <!-- Hauptinhalt -->
       <div v-else class="content">
-        <!-- Input panel -->
+        <!-- Eingabe-Panel -->
         <section class="input-panel">
           <CableSelector
             v-model="selectedCableId"
@@ -60,7 +77,7 @@ const {
           />
         </section>
 
-        <!-- Results panel -->
+        <!-- Ergebnis-Panel -->
         <section class="results-panel">
           <ResultsDisplay
             :results="results"
@@ -74,14 +91,26 @@ const {
     </main>
 
     <footer class="footer">
-      <p>
-        Part of <a href="https://github.com/oeradio" target="_blank" rel="noopener">OERadio</a> Tools
+      <div class="footer-links">
+        <a href="#" @click.prevent="openImprint">Impressum</a>
+        <span class="separator">|</span>
+        <a href="#" @click.prevent="openPrivacy">Datenschutz</a>
+        <span class="separator">|</span>
+        <a href="https://github.com/achildrenmile/kabelblick" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <p class="footer-info">
+        Teil der <a href="https://oeradio.at" target="_blank" rel="noopener">OERadio</a> Tools
         <span class="separator">•</span>
-        Data v{{ dataVersion }}
-        <span class="separator">•</span>
-        <a href="https://github.com/oeradio/kabelblick" target="_blank" rel="noopener">Source</a>
+        Daten v{{ dataVersion }}
       </p>
     </footer>
+
+    <!-- Legal Modal -->
+    <LegalModal
+      :show="showLegalModal"
+      :type="legalModalType"
+      @close="showLegalModal = false"
+    />
   </div>
 </template>
 
@@ -178,12 +207,29 @@ const {
   color: var(--color-text-muted);
 }
 
-.footer a {
+.footer-links {
+  margin-bottom: 0.5rem;
+}
+
+.footer-links a {
   color: var(--color-primary);
   text-decoration: none;
 }
 
-.footer a:hover {
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-info {
+  margin: 0;
+}
+
+.footer-info a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.footer-info a:hover {
   text-decoration: underline;
 }
 
