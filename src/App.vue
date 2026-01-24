@@ -1,6 +1,7 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
 import { useCalculator } from './composables/useCalculator.js';
+import { useI18n } from './composables/useI18n.js';
 import CableSelector from './components/CableSelector.vue';
 import FrequencyInput from './components/FrequencyInput.vue';
 import LengthInput from './components/LengthInput.vue';
@@ -23,6 +24,8 @@ const {
   loadData
 } = useCalculator();
 
+const { t, lang, toggleLanguage } = useI18n();
+
 // Legal modal state
 const showLegalModal = ref(false);
 const legalModalType = ref('imprint');
@@ -36,25 +39,37 @@ function openPrivacy() {
   legalModalType.value = 'privacy';
   showLegalModal.value = true;
 }
+
+// Update document lang attribute when language changes
+watch(lang, (newLang) => {
+  document.documentElement.lang = newLang;
+}, { immediate: true });
 </script>
 
 <template>
   <div class="app">
     <header class="header">
-      <h1>Kabelblick</h1>
-      <p class="subtitle">Koaxialkabel-Dämpfungsrechner für Funkamateure</p>
+      <div class="header-content">
+        <div>
+          <h1>{{ t('title') }}</h1>
+          <p class="subtitle">{{ t('subtitle') }}</p>
+        </div>
+        <button class="lang-toggle" @click="toggleLanguage" :title="lang === 'de' ? 'Switch to English' : 'Auf Deutsch wechseln'">
+          {{ lang === 'de' ? 'EN' : 'DE' }}
+        </button>
+      </div>
     </header>
 
     <main class="main">
       <!-- Ladezustand -->
       <div v-if="isLoading" class="loading">
-        <p>Lade Kabeldaten...</p>
+        <p>{{ t('loading') }}</p>
       </div>
 
       <!-- Fehlerzustand -->
       <div v-else-if="loadError" class="error-state">
-        <p>Fehler beim Laden der Kabeldaten: {{ loadError }}</p>
-        <button @click="loadData">Erneut versuchen</button>
+        <p>{{ t('loadError') }}: {{ loadError }}</p>
+        <button @click="loadData">{{ t('retry') }}</button>
       </div>
 
       <!-- Hauptinhalt -->
@@ -92,14 +107,14 @@ function openPrivacy() {
 
     <footer class="footer">
       <div class="footer-links">
-        <a href="#" @click.prevent="openImprint">Impressum</a>
+        <a href="#" @click.prevent="openImprint">{{ t('imprint') }}</a>
         <span class="separator">|</span>
-        <a href="#" @click.prevent="openPrivacy">Datenschutz</a>
+        <a href="#" @click.prevent="openPrivacy">{{ t('privacy') }}</a>
         <span class="separator">|</span>
         <a href="https://github.com/achildrenmile/kabelblick" target="_blank" rel="noopener">GitHub</a>
       </div>
       <p class="footer-info">
-        Teil der <a href="https://oeradio.at" target="_blank" rel="noopener">OERadio</a> Tools
+        {{ t('partOf') }} <a href="https://oeradio.at" target="_blank" rel="noopener">OERadio</a> {{ t('tools') }}
         <span class="separator">•</span>
         v{{ dataVersion }}
       </p>
@@ -123,9 +138,16 @@ function openPrivacy() {
 
 .header {
   padding: 1.5rem 1rem;
-  text-align: center;
   background: var(--color-bg-secondary);
   border-bottom: 1px solid var(--color-border);
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .header h1 {
@@ -139,6 +161,23 @@ function openPrivacy() {
   margin: 0.25rem 0 0 0;
   font-size: 1rem;
   color: var(--color-text-muted);
+}
+
+.lang-toggle {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: 2px solid var(--color-primary);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--color-primary);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.lang-toggle:hover {
+  background: var(--color-primary);
+  color: white;
 }
 
 .main {
@@ -181,6 +220,12 @@ function openPrivacy() {
 @media (max-width: 768px) {
   .content {
     grid-template-columns: 1fr;
+  }
+
+  .header-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
   }
 }
 

@@ -1,5 +1,8 @@
 <script setup>
 import { ref, watch } from 'vue';
+import { useI18n } from '../composables/useI18n.js';
+
+const { t } = useI18n();
 
 const props = defineProps({
   modelValue: {
@@ -37,7 +40,7 @@ function setPreset(length) {
 
 <template>
   <div class="length-input">
-    <label for="length">Kabellänge</label>
+    <label for="length">{{ t('cableLength') }}</label>
 
     <div class="input-row">
       <input
@@ -47,7 +50,7 @@ function setPreset(length) {
         min="0"
         max="10000"
         step="0.1"
-        placeholder="Länge eingeben"
+        :placeholder="t('enterLength')"
         @input="onInputChange"
         @blur="onInputChange"
       />
@@ -55,7 +58,7 @@ function setPreset(length) {
     </div>
 
     <div class="presets">
-      <span class="presets-label">Schnellwahl:</span>
+      <span class="presets-label">{{ t('quickSelect') }}:</span>
       <button
         v-for="preset in presets"
         :key="preset"

@@ -1,5 +1,8 @@
 <script setup>
 import { ref, watch, computed } from 'vue';
+import { useI18n } from '../composables/useI18n.js';
+
+const { t } = useI18n();
 
 const props = defineProps({
   modelValue: {
@@ -59,7 +62,7 @@ const shfBands = computed(() => props.bands.filter(b => {
 
 <template>
   <div class="frequency-input">
-    <label for="frequency">Frequenz (MHz)</label>
+    <label for="frequency">{{ t('frequency') }}</label>
 
     <div class="input-row">
       <input
@@ -69,7 +72,7 @@ const shfBands = computed(() => props.bands.filter(b => {
         min="0.1"
         max="250000"
         step="0.1"
-        placeholder="Frequenz eingeben"
+        :placeholder="t('enterFrequency')"
         @input="onInputChange"
         @blur="onInputChange"
       />
@@ -78,7 +81,7 @@ const shfBands = computed(() => props.bands.filter(b => {
 
     <div class="band-groups">
       <div v-if="hfBands.length" class="band-group">
-        <span class="band-group-label">KW:</span>
+        <span class="band-group-label">{{ t('hf') }}:</span>
         <div class="band-buttons">
           <button
             v-for="band in hfBands"
@@ -93,7 +96,7 @@ const shfBands = computed(() => props.bands.filter(b => {
       </div>
 
       <div v-if="vhfUhfBands.length" class="band-group">
-        <span class="band-group-label">VHF/UHF:</span>
+        <span class="band-group-label">{{ t('vhfUhf') }}:</span>
         <div class="band-buttons">
           <button
             v-for="band in vhfUhfBands"
@@ -108,7 +111,7 @@ const shfBands = computed(() => props.bands.filter(b => {
       </div>
 
       <div v-if="shfBands.length" class="band-group">
-        <span class="band-group-label">SHF/EHF:</span>
+        <span class="band-group-label">{{ t('shfEhf') }}:</span>
         <div class="band-buttons">
           <button
             v-for="band in shfBands"

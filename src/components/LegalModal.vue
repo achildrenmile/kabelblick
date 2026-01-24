@@ -1,5 +1,8 @@
 <script setup>
 import { ref, watch } from 'vue';
+import { useI18n } from '../composables/useI18n.js';
+
+const { t } = useI18n();
 
 const props = defineProps({
   show: {
@@ -49,20 +52,20 @@ watch(() => props.show, (isVisible) => {
         @click="handleBackdropClick"
       >
         <div class="modal-content" role="dialog" :aria-labelledby="type + '-title'">
-          <button class="modal-close" @click="$emit('close')" aria-label="Schließen">
+          <button class="modal-close" @click="$emit('close')" :aria-label="t('close')">
             ×
           </button>
 
-          <!-- Impressum -->
+          <!-- Imprint -->
           <template v-if="type === 'imprint'">
-            <h2 :id="type + '-title'">Impressum</h2>
-            <p class="legal-info">Angaben gemäß § 5 ECG und § 25 MedienG</p>
+            <h2 :id="type + '-title'">{{ t('imprintTitle') }}</h2>
+            <p class="legal-info">{{ t('imprintInfo') }}</p>
 
             <section>
-              <h3>Inhaber & Betreiber</h3>
+              <h3>{{ t('ownerOperator') }}</h3>
               <p>
                 <strong>Michael Linder</strong><br>
-                Amateurfunkrufzeichen: OE8YML<br>
+                {{ t('callsign') }}: OE8YML<br>
                 Nötsch 219<br>
                 9611 Nötsch<br>
                 Österreich
@@ -70,89 +73,63 @@ watch(() => props.show, (isVisible) => {
             </section>
 
             <section>
-              <h3>Kontakt</h3>
+              <h3>{{ t('contact') }}</h3>
               <p>
                 E-Mail: <a href="mailto:oe8yml@rednil.at">oe8yml@rednil.at</a>
               </p>
             </section>
 
             <section>
-              <h3>Haftung für Inhalte</h3>
-              <p>
-                Die Inhalte dieser Website wurden mit größter Sorgfalt erstellt.
-                Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte
-                übernehmen wir jedoch keine Gewähr. Diese Website dient als
-                Hilfsmittel zur Berechnung von Koaxialkabel-Dämpfungen im Amateurfunk.
-              </p>
+              <h3>{{ t('liabilityTitle') }}</h3>
+              <p>{{ t('liabilityText') }}</p>
             </section>
 
             <section>
-              <h3>Urheberrecht</h3>
-              <p>
-                Die durch den Betreiber erstellten Inhalte und Werke auf dieser
-                Website unterliegen dem österreichischen Urheberrecht. Der Quellcode
-                ist unter der MIT-Lizenz auf GitHub verfügbar.
-              </p>
+              <h3>{{ t('copyrightTitle') }}</h3>
+              <p>{{ t('copyrightText') }}</p>
             </section>
           </template>
 
-          <!-- Datenschutz -->
+          <!-- Privacy -->
           <template v-else-if="type === 'privacy'">
-            <h2 :id="type + '-title'">Datenschutzerklärung</h2>
-            <p class="legal-intro">
-              Der Schutz Ihrer persönlichen Daten ist uns wichtig. Diese
-              Datenschutzerklärung informiert Sie über die Datenverarbeitung
-              auf dieser Website.
-            </p>
+            <h2 :id="type + '-title'">{{ t('privacyTitle') }}</h2>
+            <p class="legal-intro">{{ t('privacyIntro') }}</p>
 
             <section>
-              <h3>Keine Datenerhebung</h3>
-              <p>
-                Diese Website ist ein reines Client-Side-Tool und erhebt,
-                speichert oder verarbeitet keine personenbezogenen Daten. Es gibt:
-              </p>
+              <h3>{{ t('noDataCollection') }}</h3>
+              <p>{{ t('noDataText') }}</p>
               <ul>
-                <li>Keine Formulare oder Benutzereingaben die gespeichert werden</li>
-                <li>Keine Cookies</li>
-                <li>Kein Tracking oder Analytics</li>
-                <li>Keine serverseitige Datenverarbeitung</li>
+                <li>{{ t('noForms') }}</li>
+                <li>{{ t('noCookies') }}</li>
+                <li>{{ t('noTracking') }}</li>
+                <li>{{ t('noServerProcessing') }}</li>
               </ul>
             </section>
 
             <section>
-              <h3>Lokale Berechnung</h3>
-              <p>
-                Alle Berechnungen werden direkt in Ihrem Browser durchgeführt.
-                Die eingegebenen Werte (Kabeltyp, Länge, Frequenz) werden nicht
-                an Server übertragen.
-              </p>
+              <h3>{{ t('localCalculation') }}</h3>
+              <p>{{ t('localCalculationText') }}</p>
             </section>
 
             <section>
-              <h3>Cloudflare</h3>
+              <h3>{{ t('cloudflare') }}</h3>
               <p>
-                Diese Website wird über Cloudflare bereitgestellt. Cloudflare
-                kann technisch notwendige Verbindungsdaten verarbeiten.
-                Weitere Informationen finden Sie in der
+                {{ t('cloudflareText') }}
                 <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">
-                  Datenschutzerklärung von Cloudflare
+                  {{ t('cloudflarePolicy') }}
                 </a>.
               </p>
             </section>
 
             <section>
-              <h3>Ihre Rechte</h3>
-              <p>
-                Da wir keine personenbezogenen Daten erheben, entfallen die
-                üblichen DSGVO-Rechte wie Auskunft, Berichtigung oder Löschung.
-                Bei Fragen können Sie uns dennoch kontaktieren.
-              </p>
+              <h3>{{ t('yourRights') }}</h3>
+              <p>{{ t('yourRightsText') }}</p>
             </section>
 
             <section>
-              <h3>Kontakt</h3>
+              <h3>{{ t('contactTitle') }}</h3>
               <p>
-                Bei Fragen zur Datenverarbeitung wenden Sie sich an:<br>
+                {{ t('contactText') }}<br>
                 <a href="mailto:oe8yml@rednil.at">oe8yml@rednil.at</a>
               </p>
             </section>

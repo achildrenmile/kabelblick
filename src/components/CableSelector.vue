@@ -1,5 +1,8 @@
 <script setup>
 import { computed } from 'vue';
+import { useI18n } from '../composables/useI18n.js';
+
+const { t } = useI18n();
 
 const props = defineProps({
   cables: {
@@ -25,13 +28,13 @@ function onSelect(event) {
 
 <template>
   <div class="cable-selector">
-    <label for="cable-select">Kabeltyp</label>
+    <label for="cable-select">{{ t('cableType') }}</label>
     <select
       id="cable-select"
       :value="modelValue"
       @change="onSelect"
     >
-      <option value="" disabled>Kabel auswählen...</option>
+      <option value="" disabled>{{ t('selectCable') }}</option>
       <option
         v-for="cable in cables"
         :key="cable.id"
@@ -44,7 +47,7 @@ function onSelect(event) {
     <div v-if="selectedCable" class="cable-info">
       <p class="cable-description">{{ selectedCable.description }}</p>
       <p class="cable-velocity">
-        Verkürzungsfaktor: {{ (selectedCable.velocityFactor * 100).toFixed(0) }}%
+        {{ t('velocityFactor') }}: {{ (selectedCable.velocityFactor * 100).toFixed(0) }}%
       </p>
     </div>
   </div>

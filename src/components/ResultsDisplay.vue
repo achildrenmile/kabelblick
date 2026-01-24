@@ -1,5 +1,8 @@
 <script setup>
 import { computed } from 'vue';
+import { useI18n } from '../composables/useI18n.js';
+
+const { t } = useI18n();
 
 const props = defineProps({
   results: {
@@ -51,27 +54,27 @@ function formatPower(watts) {
 
 <template>
   <div class="results-display">
-    <!-- Validierungsfehler -->
+    <!-- Validation errors -->
     <div v-if="!validation.isValid" class="validation-errors">
       <p v-for="error in validation.errors" :key="error" class="error">
         {{ error }}
       </p>
     </div>
 
-    <!-- Kein Kabel ausgewählt -->
+    <!-- No cable selected -->
     <div v-else-if="!cable" class="no-data">
-      <p>Wählen Sie einen Kabeltyp aus, um die Dämpfung zu berechnen.</p>
+      <p>{{ t('selectCablePrompt') }}</p>
     </div>
 
-    <!-- Ergebnisse -->
+    <!-- Results -->
     <div v-else-if="results" class="results">
-      <!-- Hauptanzeige Dämpfung -->
+      <!-- Main attenuation display -->
       <div :class="['result-main', lossSeverity]">
         <div class="attenuation-value">
           <span class="value">{{ formatNum(results.totalAttenuationDb, 2) }}</span>
           <span class="unit">dB</span>
         </div>
-        <div class="attenuation-label">Gesamtdämpfung</div>
+        <div class="attenuation-label">{{ t('totalAttenuation') }}</div>
 
         <!-- Visuelle Verlustanzeige -->
         <div class="loss-bar-container">
@@ -87,29 +90,29 @@ function formatPower(watts) {
 
         <div class="loss-stats">
           <span class="loss-percent">
-            <strong>{{ formatNum(results.lossPercent, 1) }}%</strong> Signalverlust
+            <strong>{{ formatNum(results.lossPercent, 1) }}%</strong> {{ t('signalLoss') }}
           </span>
           <span class="efficiency-percent">
-            <strong>{{ formatNum(results.efficiency, 1) }}%</strong> erreichen Antenne
+            <strong>{{ formatNum(results.efficiency, 1) }}%</strong> {{ t('reachesAntenna') }}
           </span>
         </div>
       </div>
 
-      <!-- Dämpfung pro 100m -->
+      <!-- Attenuation per 100m -->
       <div class="result-detail">
-        <span class="detail-label">Dämpfung pro 100m:</span>
+        <span class="detail-label">{{ t('attenuationPer100m') }}:</span>
         <span class="detail-value">{{ formatNum(results.dbPer100m, 2) }} dB</span>
       </div>
 
-      <!-- Leistungstabelle -->
+      <!-- Power table -->
       <div class="power-section">
-        <h3>Ausgangsleistung an der Antenne</h3>
+        <h3>{{ t('outputPowerAtAntenna') }}</h3>
         <table class="power-table">
           <thead>
             <tr>
-              <th>TX-Leistung</th>
-              <th>An Antenne</th>
-              <th>Verlust im Kabel</th>
+              <th>{{ t('txPower') }}</th>
+              <th>{{ t('atAntenna') }}</th>
+              <th>{{ t('lostInCable') }}</th>
             </tr>
           </thead>
           <tbody>
@@ -122,19 +125,19 @@ function formatPower(watts) {
         </table>
       </div>
 
-      <!-- Zusammenfassung -->
+      <!-- Summary -->
       <div :class="['summary-message', lossSeverity]">
         <template v-if="lossSeverity === 'excellent'">
-          Ausgezeichnet! Sehr geringe Kabelverluste bei dieser Frequenz.
+          {{ t('excellent') }}
         </template>
         <template v-else-if="lossSeverity === 'good'">
-          Gute Werte. Akzeptable Verluste für die meisten Anwendungen.
+          {{ t('good') }}
         </template>
         <template v-else-if="lossSeverity === 'moderate'">
-          Mäßige Verluste. Erwägen Sie kürzeres Kabel oder verlustarmen Typ für VHF/UHF.
+          {{ t('moderate') }}
         </template>
         <template v-else>
-          Hohe Verluste! Erwägen Sie ein Upgrade auf ein verlustarmes Kabel.
+          {{ t('high') }}
         </template>
       </div>
     </div>
