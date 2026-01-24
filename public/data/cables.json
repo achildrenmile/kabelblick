@@ -1,0 +1,213 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2025-01-24",
+  "source": "Manufacturer specifications and ARRL Antenna Book",
+  "cables": [
+    {
+      "id": "rg58",
+      "name": "RG-58/U",
+      "impedance": 50,
+      "velocityFactor": 0.66,
+      "description": "Thin 50Ω coax, 5mm diameter, flexible",
+      "attenuation": [
+        { "frequencyMHz": 1, "dbPer100m": 1.2 },
+        { "frequencyMHz": 3.5, "dbPer100m": 2.3 },
+        { "frequencyMHz": 7, "dbPer100m": 3.3 },
+        { "frequencyMHz": 14, "dbPer100m": 4.9 },
+        { "frequencyMHz": 21, "dbPer100m": 6.0 },
+        { "frequencyMHz": 28, "dbPer100m": 7.0 },
+        { "frequencyMHz": 50, "dbPer100m": 9.5 },
+        { "frequencyMHz": 144, "dbPer100m": 17.0 },
+        { "frequencyMHz": 432, "dbPer100m": 32.0 },
+        { "frequencyMHz": 1296, "dbPer100m": 62.0 }
+      ]
+    },
+    {
+      "id": "rg213",
+      "name": "RG-213/U",
+      "impedance": 50,
+      "velocityFactor": 0.66,
+      "description": "Standard 50Ω coax, 10.3mm diameter",
+      "attenuation": [
+        { "frequencyMHz": 1, "dbPer100m": 0.6 },
+        { "frequencyMHz": 3.5, "dbPer100m": 1.1 },
+        { "frequencyMHz": 7, "dbPer100m": 1.6 },
+        { "frequencyMHz": 14, "dbPer100m": 2.3 },
+        { "frequencyMHz": 21, "dbPer100m": 2.9 },
+        { "frequencyMHz": 28, "dbPer100m": 3.3 },
+        { "frequencyMHz": 50, "dbPer100m": 4.5 },
+        { "frequencyMHz": 144, "dbPer100m": 7.8 },
+        { "frequencyMHz": 432, "dbPer100m": 14.5 },
+        { "frequencyMHz": 1296, "dbPer100m": 27.0 }
+      ]
+    },
+    {
+      "id": "rg8x",
+      "name": "RG-8X",
+      "impedance": 50,
+      "velocityFactor": 0.82,
+      "description": "Mini-8, foam dielectric, 6.1mm diameter",
+      "attenuation": [
+        { "frequencyMHz": 1, "dbPer100m": 0.8 },
+        { "frequencyMHz": 3.5, "dbPer100m": 1.5 },
+        { "frequencyMHz": 7, "dbPer100m": 2.2 },
+        { "frequencyMHz": 14, "dbPer100m": 3.2 },
+        { "frequencyMHz": 21, "dbPer100m": 4.0 },
+        { "frequencyMHz": 28, "dbPer100m": 4.6 },
+        { "frequencyMHz": 50, "dbPer100m": 6.2 },
+        { "frequencyMHz": 144, "dbPer100m": 11.0 },
+        { "frequencyMHz": 432, "dbPer100m": 20.0 },
+        { "frequencyMHz": 1296, "dbPer100m": 38.0 }
+      ]
+    },
+    {
+      "id": "lmr400",
+      "name": "LMR-400",
+      "impedance": 50,
+      "velocityFactor": 0.85,
+      "description": "Low-loss 50Ω, 10.3mm diameter, foam dielectric",
+      "attenuation": [
+        { "frequencyMHz": 1, "dbPer100m": 0.25 },
+        { "frequencyMHz": 3.5, "dbPer100m": 0.50 },
+        { "frequencyMHz": 7, "dbPer100m": 0.72 },
+        { "frequencyMHz": 14, "dbPer100m": 1.05 },
+        { "frequencyMHz": 21, "dbPer100m": 1.30 },
+        { "frequencyMHz": 28, "dbPer100m": 1.51 },
+        { "frequencyMHz": 50, "dbPer100m": 2.05 },
+        { "frequencyMHz": 144, "dbPer100m": 3.60 },
+        { "frequencyMHz": 432, "dbPer100m": 6.50 },
+        { "frequencyMHz": 1296, "dbPer100m": 11.80 }
+      ]
+    },
+    {
+      "id": "lmr600",
+      "name": "LMR-600",
+      "impedance": 50,
+      "velocityFactor": 0.87,
+      "description": "Ultra low-loss 50Ω, 15.2mm diameter",
+      "attenuation": [
+        { "frequencyMHz": 1, "dbPer100m": 0.16 },
+        { "frequencyMHz": 3.5, "dbPer100m": 0.32 },
+        { "frequencyMHz": 7, "dbPer100m": 0.46 },
+        { "frequencyMHz": 14, "dbPer100m": 0.67 },
+        { "frequencyMHz": 21, "dbPer100m": 0.83 },
+        { "frequencyMHz": 28, "dbPer100m": 0.97 },
+        { "frequencyMHz": 50, "dbPer100m": 1.32 },
+        { "frequencyMHz": 144, "dbPer100m": 2.30 },
+        { "frequencyMHz": 432, "dbPer100m": 4.15 },
+        { "frequencyMHz": 1296, "dbPer100m": 7.55 }
+      ]
+    },
+    {
+      "id": "aircom_plus",
+      "name": "Aircom Plus",
+      "impedance": 50,
+      "velocityFactor": 0.85,
+      "description": "Air dielectric, ultra low-loss, 10.8mm diameter",
+      "attenuation": [
+        { "frequencyMHz": 1, "dbPer100m": 0.22 },
+        { "frequencyMHz": 3.5, "dbPer100m": 0.43 },
+        { "frequencyMHz": 7, "dbPer100m": 0.62 },
+        { "frequencyMHz": 14, "dbPer100m": 0.90 },
+        { "frequencyMHz": 21, "dbPer100m": 1.12 },
+        { "frequencyMHz": 28, "dbPer100m": 1.30 },
+        { "frequencyMHz": 50, "dbPer100m": 1.77 },
+        { "frequencyMHz": 144, "dbPer100m": 3.10 },
+        { "frequencyMHz": 432, "dbPer100m": 5.60 },
+        { "frequencyMHz": 1296, "dbPer100m": 10.20 }
+      ]
+    },
+    {
+      "id": "ecoflex10",
+      "name": "Ecoflex 10",
+      "impedance": 50,
+      "velocityFactor": 0.86,
+      "description": "Low-loss, flexible, 10.2mm diameter",
+      "attenuation": [
+        { "frequencyMHz": 1, "dbPer100m": 0.28 },
+        { "frequencyMHz": 3.5, "dbPer100m": 0.55 },
+        { "frequencyMHz": 7, "dbPer100m": 0.80 },
+        { "frequencyMHz": 14, "dbPer100m": 1.16 },
+        { "frequencyMHz": 21, "dbPer100m": 1.44 },
+        { "frequencyMHz": 28, "dbPer100m": 1.67 },
+        { "frequencyMHz": 50, "dbPer100m": 2.28 },
+        { "frequencyMHz": 144, "dbPer100m": 4.00 },
+        { "frequencyMHz": 432, "dbPer100m": 7.20 },
+        { "frequencyMHz": 1296, "dbPer100m": 13.10 }
+      ]
+    },
+    {
+      "id": "ecoflex15",
+      "name": "Ecoflex 15",
+      "impedance": 50,
+      "velocityFactor": 0.86,
+      "description": "Ultra low-loss, 14.6mm diameter",
+      "attenuation": [
+        { "frequencyMHz": 1, "dbPer100m": 0.18 },
+        { "frequencyMHz": 3.5, "dbPer100m": 0.36 },
+        { "frequencyMHz": 7, "dbPer100m": 0.52 },
+        { "frequencyMHz": 14, "dbPer100m": 0.76 },
+        { "frequencyMHz": 21, "dbPer100m": 0.94 },
+        { "frequencyMHz": 28, "dbPer100m": 1.10 },
+        { "frequencyMHz": 50, "dbPer100m": 1.50 },
+        { "frequencyMHz": 144, "dbPer100m": 2.63 },
+        { "frequencyMHz": 432, "dbPer100m": 4.75 },
+        { "frequencyMHz": 1296, "dbPer100m": 8.65 }
+      ]
+    },
+    {
+      "id": "h155",
+      "name": "H-155 / CLF-200",
+      "impedance": 50,
+      "velocityFactor": 0.79,
+      "description": "Common European low-loss, 5.4mm diameter",
+      "attenuation": [
+        { "frequencyMHz": 1, "dbPer100m": 0.50 },
+        { "frequencyMHz": 3.5, "dbPer100m": 1.00 },
+        { "frequencyMHz": 7, "dbPer100m": 1.45 },
+        { "frequencyMHz": 14, "dbPer100m": 2.10 },
+        { "frequencyMHz": 21, "dbPer100m": 2.60 },
+        { "frequencyMHz": 28, "dbPer100m": 3.02 },
+        { "frequencyMHz": 50, "dbPer100m": 4.10 },
+        { "frequencyMHz": 144, "dbPer100m": 7.20 },
+        { "frequencyMHz": 432, "dbPer100m": 13.00 },
+        { "frequencyMHz": 1296, "dbPer100m": 23.70 }
+      ]
+    },
+    {
+      "id": "rg174",
+      "name": "RG-174/U",
+      "impedance": 50,
+      "velocityFactor": 0.66,
+      "description": "Very thin 50Ω, 2.5mm diameter, high loss",
+      "attenuation": [
+        { "frequencyMHz": 1, "dbPer100m": 3.3 },
+        { "frequencyMHz": 3.5, "dbPer100m": 6.0 },
+        { "frequencyMHz": 7, "dbPer100m": 8.5 },
+        { "frequencyMHz": 14, "dbPer100m": 12.5 },
+        { "frequencyMHz": 21, "dbPer100m": 15.5 },
+        { "frequencyMHz": 28, "dbPer100m": 18.0 },
+        { "frequencyMHz": 50, "dbPer100m": 25.0 },
+        { "frequencyMHz": 144, "dbPer100m": 44.0 },
+        { "frequencyMHz": 432, "dbPer100m": 80.0 },
+        { "frequencyMHz": 1296, "dbPer100m": 150.0 }
+      ]
+    }
+  ],
+  "bands": [
+    { "name": "160m", "frequencyMHz": 1.85, "range": "1.8-2.0 MHz" },
+    { "name": "80m", "frequencyMHz": 3.65, "range": "3.5-3.8 MHz" },
+    { "name": "60m", "frequencyMHz": 5.35, "range": "5.3-5.4 MHz" },
+    { "name": "40m", "frequencyMHz": 7.1, "range": "7.0-7.2 MHz" },
+    { "name": "30m", "frequencyMHz": 10.125, "range": "10.1-10.15 MHz" },
+    { "name": "20m", "frequencyMHz": 14.175, "range": "14.0-14.35 MHz" },
+    { "name": "17m", "frequencyMHz": 18.1, "range": "18.068-18.168 MHz" },
+    { "name": "15m", "frequencyMHz": 21.2, "range": "21.0-21.45 MHz" },
+    { "name": "12m", "frequencyMHz": 24.94, "range": "24.89-24.99 MHz" },
+    { "name": "10m", "frequencyMHz": 28.5, "range": "28.0-29.7 MHz" },
+    { "name": "6m", "frequencyMHz": 51.0, "range": "50-54 MHz" },
+    { "name": "2m", "frequencyMHz": 145.0, "range": "144-148 MHz" },
+    { "name": "70cm", "frequencyMHz": 435.0, "range": "430-440 MHz" },
+    { "name": "23cm", "frequencyMHz": 1296.0, "range": "1240-1300 MHz" }
+  ]
+}
