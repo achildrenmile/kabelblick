@@ -1,7 +1,7 @@
 {
-  "version": "1.2.0",
+  "version": "1.3.0",
   "lastUpdated": "2026-01-24",
-  "source": "Herstellerangaben und ARRL Antenna Book",
+  "source": "Herstellerangaben, ARRL Antenna Book, Messi & Paoloni Datenblätter",
   "cables": [
     {
       "id": "rg58",
@@ -253,6 +253,489 @@
         { "frequencyMHz": 1296, "dbPer100m": 9.92 },
         { "frequencyMHz": 2400, "dbPer100m": 14.00 },
         { "frequencyMHz": 5760, "dbPer100m": 23.10 }
+      ]
+    },
+    {
+      "id": "ultraflex7",
+      "name": "M&P Ultraflex 7",
+      "impedance": 50,
+      "velocityFactor": 0.83,
+      "description": "Messi & Paoloni, sehr flexibel, 7.3mm Durchmesser",
+      "attenuation": [
+        { "frequencyMHz": 1, "dbPer100m": 0.38 },
+        { "frequencyMHz": 3.5, "dbPer100m": 0.75 },
+        { "frequencyMHz": 7, "dbPer100m": 1.08 },
+        { "frequencyMHz": 14, "dbPer100m": 1.56 },
+        { "frequencyMHz": 21, "dbPer100m": 1.94 },
+        { "frequencyMHz": 28, "dbPer100m": 2.26 },
+        { "frequencyMHz": 50, "dbPer100m": 3.07 },
+        { "frequencyMHz": 144, "dbPer100m": 5.40 },
+        { "frequencyMHz": 432, "dbPer100m": 9.70 },
+        { "frequencyMHz": 1296, "dbPer100m": 17.70 },
+        { "frequencyMHz": 2400, "dbPer100m": 25.00 },
+        { "frequencyMHz": 5760, "dbPer100m": 41.30 }
+      ]
+    },
+    {
+      "id": "ultraflex10",
+      "name": "M&P Ultraflex 10",
+      "impedance": 50,
+      "velocityFactor": 0.83,
+      "description": "Messi & Paoloni, flexibel, verlustarm, 10.3mm Durchmesser",
+      "attenuation": [
+        { "frequencyMHz": 1, "dbPer100m": 0.24 },
+        { "frequencyMHz": 3.5, "dbPer100m": 0.48 },
+        { "frequencyMHz": 7, "dbPer100m": 0.69 },
+        { "frequencyMHz": 14, "dbPer100m": 1.00 },
+        { "frequencyMHz": 21, "dbPer100m": 1.24 },
+        { "frequencyMHz": 28, "dbPer100m": 1.45 },
+        { "frequencyMHz": 50, "dbPer100m": 1.97 },
+        { "frequencyMHz": 144, "dbPer100m": 3.45 },
+        { "frequencyMHz": 432, "dbPer100m": 6.20 },
+        { "frequencyMHz": 1296, "dbPer100m": 11.30 },
+        { "frequencyMHz": 2400, "dbPer100m": 16.00 },
+        { "frequencyMHz": 5760, "dbPer100m": 26.40 }
+      ]
+    },
+    {
+      "id": "airborne5",
+      "name": "M&P Airborne 5",
+      "impedance": 50,
+      "velocityFactor": 0.82,
+      "description": "Messi & Paoloni, Luftdielektrikum, 5.4mm Durchmesser",
+      "attenuation": [
+        { "frequencyMHz": 1, "dbPer100m": 0.52 },
+        { "frequencyMHz": 3.5, "dbPer100m": 1.03 },
+        { "frequencyMHz": 7, "dbPer100m": 1.48 },
+        { "frequencyMHz": 14, "dbPer100m": 2.15 },
+        { "frequencyMHz": 21, "dbPer100m": 2.67 },
+        { "frequencyMHz": 28, "dbPer100m": 3.11 },
+        { "frequencyMHz": 50, "dbPer100m": 4.23 },
+        { "frequencyMHz": 144, "dbPer100m": 7.40 },
+        { "frequencyMHz": 432, "dbPer100m": 13.30 },
+        { "frequencyMHz": 1296, "dbPer100m": 24.30 },
+        { "frequencyMHz": 2400, "dbPer100m": 34.50 },
+        { "frequencyMHz": 5760, "dbPer100m": 57.00 }
+      ]
+    },
+    {
+      "id": "airborne10",
+      "name": "M&P Airborne 10",
+      "impedance": 50,
+      "velocityFactor": 0.85,
+      "description": "Messi & Paoloni, Luftdielektrikum, verlustarm, 10.3mm Durchmesser",
+      "attenuation": [
+        { "frequencyMHz": 1, "dbPer100m": 0.22 },
+        { "frequencyMHz": 3.5, "dbPer100m": 0.44 },
+        { "frequencyMHz": 7, "dbPer100m": 0.63 },
+        { "frequencyMHz": 14, "dbPer100m": 0.92 },
+        { "frequencyMHz": 21, "dbPer100m": 1.14 },
+        { "frequencyMHz": 28, "dbPer100m": 1.33 },
+        { "frequencyMHz": 50, "dbPer100m": 1.80 },
+        { "frequencyMHz": 144, "dbPer100m": 3.15 },
+        { "frequencyMHz": 432, "dbPer100m": 5.70 },
+        { "frequencyMHz": 1296, "dbPer100m": 10.40 },
+        { "frequencyMHz": 2400, "dbPer100m": 14.70 },
+        { "frequencyMHz": 5760, "dbPer100m": 24.30 }
+      ]
+    },
+    {
+      "id": "hyperflex5",
+      "name": "M&P Hyperflex 5",
+      "impedance": 50,
+      "velocityFactor": 0.80,
+      "description": "Messi & Paoloni, flexibel, 5.4mm Durchmesser",
+      "attenuation": [
+        { "frequencyMHz": 1, "dbPer100m": 0.60 },
+        { "frequencyMHz": 3.5, "dbPer100m": 1.18 },
+        { "frequencyMHz": 7, "dbPer100m": 1.70 },
+        { "frequencyMHz": 14, "dbPer100m": 2.47 },
+        { "frequencyMHz": 21, "dbPer100m": 3.07 },
+        { "frequencyMHz": 28, "dbPer100m": 3.57 },
+        { "frequencyMHz": 50, "dbPer100m": 4.86 },
+        { "frequencyMHz": 144, "dbPer100m": 8.50 },
+        { "frequencyMHz": 432, "dbPer100m": 15.30 },
+        { "frequencyMHz": 1296, "dbPer100m": 28.00 },
+        { "frequencyMHz": 2400, "dbPer100m": 40.00 },
+        { "frequencyMHz": 5760, "dbPer100m": 66.00 }
+      ]
+    },
+    {
+      "id": "hyperflex7",
+      "name": "M&P Hyperflex 7",
+      "impedance": 50,
+      "velocityFactor": 0.83,
+      "description": "Messi & Paoloni, flexibel, 7.3mm Durchmesser",
+      "attenuation": [
+        { "frequencyMHz": 1, "dbPer100m": 0.35 },
+        { "frequencyMHz": 3.5, "dbPer100m": 0.70 },
+        { "frequencyMHz": 7, "dbPer100m": 1.00 },
+        { "frequencyMHz": 14, "dbPer100m": 1.46 },
+        { "frequencyMHz": 21, "dbPer100m": 1.82 },
+        { "frequencyMHz": 28, "dbPer100m": 2.12 },
+        { "frequencyMHz": 50, "dbPer100m": 2.88 },
+        { "frequencyMHz": 144, "dbPer100m": 5.05 },
+        { "frequencyMHz": 432, "dbPer100m": 9.10 },
+        { "frequencyMHz": 1296, "dbPer100m": 16.60 },
+        { "frequencyMHz": 2400, "dbPer100m": 23.50 },
+        { "frequencyMHz": 5760, "dbPer100m": 38.80 }
+      ]
+    },
+    {
+      "id": "hyperflex13",
+      "name": "M&P Hyperflex 13",
+      "impedance": 50,
+      "velocityFactor": 0.83,
+      "description": "Messi & Paoloni, ultra verlustarm, 13.0mm Durchmesser",
+      "attenuation": [
+        { "frequencyMHz": 1, "dbPer100m": 0.17 },
+        { "frequencyMHz": 3.5, "dbPer100m": 0.34 },
+        { "frequencyMHz": 7, "dbPer100m": 0.49 },
+        { "frequencyMHz": 14, "dbPer100m": 0.72 },
+        { "frequencyMHz": 21, "dbPer100m": 0.89 },
+        { "frequencyMHz": 28, "dbPer100m": 1.04 },
+        { "frequencyMHz": 50, "dbPer100m": 1.41 },
+        { "frequencyMHz": 144, "dbPer100m": 2.48 },
+        { "frequencyMHz": 432, "dbPer100m": 4.47 },
+        { "frequencyMHz": 1296, "dbPer100m": 8.15 },
+        { "frequencyMHz": 2400, "dbPer100m": 11.50 },
+        { "frequencyMHz": 5760, "dbPer100m": 19.00 }
+      ]
+    },
+    {
+      "id": "lmr200",
+      "name": "LMR-200",
+      "impedance": 50,
+      "velocityFactor": 0.83,
+      "description": "Times Microwave, flexibel, 4.95mm Durchmesser",
+      "attenuation": [
+        { "frequencyMHz": 1, "dbPer100m": 0.52 },
+        { "frequencyMHz": 3.5, "dbPer100m": 1.02 },
+        { "frequencyMHz": 7, "dbPer100m": 1.48 },
+        { "frequencyMHz": 14, "dbPer100m": 2.15 },
+        { "frequencyMHz": 21, "dbPer100m": 2.67 },
+        { "frequencyMHz": 28, "dbPer100m": 3.11 },
+        { "frequencyMHz": 50, "dbPer100m": 4.23 },
+        { "frequencyMHz": 144, "dbPer100m": 7.45 },
+        { "frequencyMHz": 432, "dbPer100m": 13.45 },
+        { "frequencyMHz": 1296, "dbPer100m": 24.60 },
+        { "frequencyMHz": 2400, "dbPer100m": 34.80 },
+        { "frequencyMHz": 5760, "dbPer100m": 57.40 }
+      ]
+    },
+    {
+      "id": "lmr240",
+      "name": "LMR-240",
+      "impedance": 50,
+      "velocityFactor": 0.84,
+      "description": "Times Microwave, 6.1mm Durchmesser",
+      "attenuation": [
+        { "frequencyMHz": 1, "dbPer100m": 0.39 },
+        { "frequencyMHz": 3.5, "dbPer100m": 0.77 },
+        { "frequencyMHz": 7, "dbPer100m": 1.11 },
+        { "frequencyMHz": 14, "dbPer100m": 1.61 },
+        { "frequencyMHz": 21, "dbPer100m": 2.00 },
+        { "frequencyMHz": 28, "dbPer100m": 2.33 },
+        { "frequencyMHz": 50, "dbPer100m": 3.17 },
+        { "frequencyMHz": 144, "dbPer100m": 5.58 },
+        { "frequencyMHz": 432, "dbPer100m": 10.10 },
+        { "frequencyMHz": 1296, "dbPer100m": 18.40 },
+        { "frequencyMHz": 2400, "dbPer100m": 26.00 },
+        { "frequencyMHz": 5760, "dbPer100m": 43.00 }
+      ]
+    },
+    {
+      "id": "lmr900",
+      "name": "LMR-900",
+      "impedance": 50,
+      "velocityFactor": 0.87,
+      "description": "Times Microwave, ultra verlustarm, 22.1mm Durchmesser",
+      "attenuation": [
+        { "frequencyMHz": 1, "dbPer100m": 0.10 },
+        { "frequencyMHz": 3.5, "dbPer100m": 0.20 },
+        { "frequencyMHz": 7, "dbPer100m": 0.29 },
+        { "frequencyMHz": 14, "dbPer100m": 0.42 },
+        { "frequencyMHz": 21, "dbPer100m": 0.52 },
+        { "frequencyMHz": 28, "dbPer100m": 0.61 },
+        { "frequencyMHz": 50, "dbPer100m": 0.82 },
+        { "frequencyMHz": 144, "dbPer100m": 1.44 },
+        { "frequencyMHz": 432, "dbPer100m": 2.60 },
+        { "frequencyMHz": 1296, "dbPer100m": 4.75 },
+        { "frequencyMHz": 2400, "dbPer100m": 6.70 },
+        { "frequencyMHz": 5760, "dbPer100m": 11.00 }
+      ]
+    },
+    {
+      "id": "lmr1200",
+      "name": "LMR-1200",
+      "impedance": 50,
+      "velocityFactor": 0.88,
+      "description": "Times Microwave, minimale Verluste, 30.5mm Durchmesser",
+      "attenuation": [
+        { "frequencyMHz": 1, "dbPer100m": 0.07 },
+        { "frequencyMHz": 3.5, "dbPer100m": 0.14 },
+        { "frequencyMHz": 7, "dbPer100m": 0.20 },
+        { "frequencyMHz": 14, "dbPer100m": 0.29 },
+        { "frequencyMHz": 21, "dbPer100m": 0.36 },
+        { "frequencyMHz": 28, "dbPer100m": 0.42 },
+        { "frequencyMHz": 50, "dbPer100m": 0.57 },
+        { "frequencyMHz": 144, "dbPer100m": 1.00 },
+        { "frequencyMHz": 432, "dbPer100m": 1.80 },
+        { "frequencyMHz": 1296, "dbPer100m": 3.30 },
+        { "frequencyMHz": 2400, "dbPer100m": 4.65 },
+        { "frequencyMHz": 5760, "dbPer100m": 7.65 }
+      ]
+    },
+    {
+      "id": "rg8",
+      "name": "RG-8/U",
+      "impedance": 50,
+      "velocityFactor": 0.66,
+      "description": "Standard 50Ω Koax, 10.3mm Durchmesser, Vollkern",
+      "attenuation": [
+        { "frequencyMHz": 1, "dbPer100m": 0.55 },
+        { "frequencyMHz": 3.5, "dbPer100m": 1.05 },
+        { "frequencyMHz": 7, "dbPer100m": 1.50 },
+        { "frequencyMHz": 14, "dbPer100m": 2.20 },
+        { "frequencyMHz": 21, "dbPer100m": 2.75 },
+        { "frequencyMHz": 28, "dbPer100m": 3.20 },
+        { "frequencyMHz": 50, "dbPer100m": 4.35 },
+        { "frequencyMHz": 144, "dbPer100m": 7.60 },
+        { "frequencyMHz": 432, "dbPer100m": 14.00 },
+        { "frequencyMHz": 1296, "dbPer100m": 26.00 },
+        { "frequencyMHz": 2400, "dbPer100m": 38.00 },
+        { "frequencyMHz": 5760, "dbPer100m": 65.00 }
+      ]
+    },
+    {
+      "id": "rg11",
+      "name": "RG-11/U",
+      "impedance": 75,
+      "velocityFactor": 0.66,
+      "description": "75Ω Koax, 10.3mm Durchmesser, für Antennenanlagen",
+      "attenuation": [
+        { "frequencyMHz": 1, "dbPer100m": 0.40 },
+        { "frequencyMHz": 3.5, "dbPer100m": 0.78 },
+        { "frequencyMHz": 7, "dbPer100m": 1.12 },
+        { "frequencyMHz": 14, "dbPer100m": 1.63 },
+        { "frequencyMHz": 21, "dbPer100m": 2.03 },
+        { "frequencyMHz": 28, "dbPer100m": 2.36 },
+        { "frequencyMHz": 50, "dbPer100m": 3.20 },
+        { "frequencyMHz": 144, "dbPer100m": 5.60 },
+        { "frequencyMHz": 432, "dbPer100m": 10.30 },
+        { "frequencyMHz": 1296, "dbPer100m": 19.00 },
+        { "frequencyMHz": 2400, "dbPer100m": 27.50 },
+        { "frequencyMHz": 5760, "dbPer100m": 47.00 }
+      ]
+    },
+    {
+      "id": "rg6",
+      "name": "RG-6/U",
+      "impedance": 75,
+      "velocityFactor": 0.82,
+      "description": "75Ω Koax, 6.9mm Durchmesser, TV/SAT Standard",
+      "attenuation": [
+        { "frequencyMHz": 1, "dbPer100m": 0.60 },
+        { "frequencyMHz": 3.5, "dbPer100m": 1.18 },
+        { "frequencyMHz": 7, "dbPer100m": 1.70 },
+        { "frequencyMHz": 14, "dbPer100m": 2.47 },
+        { "frequencyMHz": 21, "dbPer100m": 3.07 },
+        { "frequencyMHz": 28, "dbPer100m": 3.57 },
+        { "frequencyMHz": 50, "dbPer100m": 4.86 },
+        { "frequencyMHz": 144, "dbPer100m": 8.50 },
+        { "frequencyMHz": 432, "dbPer100m": 15.60 },
+        { "frequencyMHz": 1296, "dbPer100m": 28.50 },
+        { "frequencyMHz": 2400, "dbPer100m": 40.50 },
+        { "frequencyMHz": 5760, "dbPer100m": 68.00 }
+      ]
+    },
+    {
+      "id": "belden9913",
+      "name": "Belden 9913",
+      "impedance": 50,
+      "velocityFactor": 0.84,
+      "description": "Belden Premium, verlustarm, 10.3mm Durchmesser",
+      "attenuation": [
+        { "frequencyMHz": 1, "dbPer100m": 0.26 },
+        { "frequencyMHz": 3.5, "dbPer100m": 0.51 },
+        { "frequencyMHz": 7, "dbPer100m": 0.74 },
+        { "frequencyMHz": 14, "dbPer100m": 1.07 },
+        { "frequencyMHz": 21, "dbPer100m": 1.33 },
+        { "frequencyMHz": 28, "dbPer100m": 1.55 },
+        { "frequencyMHz": 50, "dbPer100m": 2.10 },
+        { "frequencyMHz": 144, "dbPer100m": 3.70 },
+        { "frequencyMHz": 432, "dbPer100m": 6.70 },
+        { "frequencyMHz": 1296, "dbPer100m": 12.20 },
+        { "frequencyMHz": 2400, "dbPer100m": 17.30 },
+        { "frequencyMHz": 5760, "dbPer100m": 28.50 }
+      ]
+    },
+    {
+      "id": "westflex103",
+      "name": "Westflex 103",
+      "impedance": 50,
+      "velocityFactor": 0.82,
+      "description": "Verlustarm, flexibel, 10.3mm Durchmesser",
+      "attenuation": [
+        { "frequencyMHz": 1, "dbPer100m": 0.27 },
+        { "frequencyMHz": 3.5, "dbPer100m": 0.53 },
+        { "frequencyMHz": 7, "dbPer100m": 0.77 },
+        { "frequencyMHz": 14, "dbPer100m": 1.12 },
+        { "frequencyMHz": 21, "dbPer100m": 1.39 },
+        { "frequencyMHz": 28, "dbPer100m": 1.62 },
+        { "frequencyMHz": 50, "dbPer100m": 2.20 },
+        { "frequencyMHz": 144, "dbPer100m": 3.86 },
+        { "frequencyMHz": 432, "dbPer100m": 6.95 },
+        { "frequencyMHz": 1296, "dbPer100m": 12.70 },
+        { "frequencyMHz": 2400, "dbPer100m": 18.00 },
+        { "frequencyMHz": 5760, "dbPer100m": 29.70 }
+      ]
+    },
+    {
+      "id": "cnt400",
+      "name": "CNT-400",
+      "impedance": 50,
+      "velocityFactor": 0.85,
+      "description": "Commscope/Andrew, LMR-400 kompatibel, 10.3mm Durchmesser",
+      "attenuation": [
+        { "frequencyMHz": 1, "dbPer100m": 0.25 },
+        { "frequencyMHz": 3.5, "dbPer100m": 0.49 },
+        { "frequencyMHz": 7, "dbPer100m": 0.71 },
+        { "frequencyMHz": 14, "dbPer100m": 1.03 },
+        { "frequencyMHz": 21, "dbPer100m": 1.28 },
+        { "frequencyMHz": 28, "dbPer100m": 1.49 },
+        { "frequencyMHz": 50, "dbPer100m": 2.02 },
+        { "frequencyMHz": 144, "dbPer100m": 3.55 },
+        { "frequencyMHz": 432, "dbPer100m": 6.40 },
+        { "frequencyMHz": 1296, "dbPer100m": 11.65 },
+        { "frequencyMHz": 2400, "dbPer100m": 16.50 },
+        { "frequencyMHz": 5760, "dbPer100m": 27.20 }
+      ]
+    },
+    {
+      "id": "ldf4_50a",
+      "name": "Heliax LDF4-50A (1/2\")",
+      "impedance": 50,
+      "velocityFactor": 0.88,
+      "description": "Andrew/Commscope Heliax, 1/2\" Kupfer, sehr verlustarm",
+      "attenuation": [
+        { "frequencyMHz": 1, "dbPer100m": 0.10 },
+        { "frequencyMHz": 3.5, "dbPer100m": 0.20 },
+        { "frequencyMHz": 7, "dbPer100m": 0.28 },
+        { "frequencyMHz": 14, "dbPer100m": 0.41 },
+        { "frequencyMHz": 21, "dbPer100m": 0.51 },
+        { "frequencyMHz": 28, "dbPer100m": 0.60 },
+        { "frequencyMHz": 50, "dbPer100m": 0.81 },
+        { "frequencyMHz": 144, "dbPer100m": 1.43 },
+        { "frequencyMHz": 432, "dbPer100m": 2.58 },
+        { "frequencyMHz": 1296, "dbPer100m": 4.70 },
+        { "frequencyMHz": 2400, "dbPer100m": 6.65 },
+        { "frequencyMHz": 5760, "dbPer100m": 10.95 }
+      ]
+    },
+    {
+      "id": "ldf5_50a",
+      "name": "Heliax LDF5-50A (7/8\")",
+      "impedance": 50,
+      "velocityFactor": 0.89,
+      "description": "Andrew/Commscope Heliax, 7/8\" Kupfer, minimale Verluste",
+      "attenuation": [
+        { "frequencyMHz": 1, "dbPer100m": 0.06 },
+        { "frequencyMHz": 3.5, "dbPer100m": 0.11 },
+        { "frequencyMHz": 7, "dbPer100m": 0.16 },
+        { "frequencyMHz": 14, "dbPer100m": 0.24 },
+        { "frequencyMHz": 21, "dbPer100m": 0.29 },
+        { "frequencyMHz": 28, "dbPer100m": 0.34 },
+        { "frequencyMHz": 50, "dbPer100m": 0.46 },
+        { "frequencyMHz": 144, "dbPer100m": 0.82 },
+        { "frequencyMHz": 432, "dbPer100m": 1.48 },
+        { "frequencyMHz": 1296, "dbPer100m": 2.70 },
+        { "frequencyMHz": 2400, "dbPer100m": 3.82 },
+        { "frequencyMHz": 5760, "dbPer100m": 6.30 }
+      ]
+    },
+    {
+      "id": "ldf6_50a",
+      "name": "Heliax LDF6-50A (1-1/4\")",
+      "impedance": 50,
+      "velocityFactor": 0.89,
+      "description": "Andrew/Commscope Heliax, 1-1/4\" Kupfer, extrem verlustarm",
+      "attenuation": [
+        { "frequencyMHz": 1, "dbPer100m": 0.04 },
+        { "frequencyMHz": 3.5, "dbPer100m": 0.08 },
+        { "frequencyMHz": 7, "dbPer100m": 0.11 },
+        { "frequencyMHz": 14, "dbPer100m": 0.16 },
+        { "frequencyMHz": 21, "dbPer100m": 0.20 },
+        { "frequencyMHz": 28, "dbPer100m": 0.23 },
+        { "frequencyMHz": 50, "dbPer100m": 0.32 },
+        { "frequencyMHz": 144, "dbPer100m": 0.56 },
+        { "frequencyMHz": 432, "dbPer100m": 1.01 },
+        { "frequencyMHz": 1296, "dbPer100m": 1.85 },
+        { "frequencyMHz": 2400, "dbPer100m": 2.62 },
+        { "frequencyMHz": 5760, "dbPer100m": 4.30 }
+      ]
+    },
+    {
+      "id": "cellflex12",
+      "name": "Cellflex 1/2\" (LCF12-50J)",
+      "impedance": 50,
+      "velocityFactor": 0.88,
+      "description": "RFS Cellflex, 1/2\" geschäumt, flexibel für Mobilfunk",
+      "attenuation": [
+        { "frequencyMHz": 1, "dbPer100m": 0.12 },
+        { "frequencyMHz": 3.5, "dbPer100m": 0.23 },
+        { "frequencyMHz": 7, "dbPer100m": 0.34 },
+        { "frequencyMHz": 14, "dbPer100m": 0.49 },
+        { "frequencyMHz": 21, "dbPer100m": 0.61 },
+        { "frequencyMHz": 28, "dbPer100m": 0.71 },
+        { "frequencyMHz": 50, "dbPer100m": 0.97 },
+        { "frequencyMHz": 144, "dbPer100m": 1.70 },
+        { "frequencyMHz": 432, "dbPer100m": 3.07 },
+        { "frequencyMHz": 1296, "dbPer100m": 5.60 },
+        { "frequencyMHz": 2400, "dbPer100m": 7.90 },
+        { "frequencyMHz": 5760, "dbPer100m": 13.00 }
+      ]
+    },
+    {
+      "id": "h2000",
+      "name": "H-2000 Flex",
+      "impedance": 50,
+      "velocityFactor": 0.83,
+      "description": "Europäisch, sehr flexibel, 10.3mm Durchmesser",
+      "attenuation": [
+        { "frequencyMHz": 1, "dbPer100m": 0.24 },
+        { "frequencyMHz": 3.5, "dbPer100m": 0.47 },
+        { "frequencyMHz": 7, "dbPer100m": 0.68 },
+        { "frequencyMHz": 14, "dbPer100m": 0.99 },
+        { "frequencyMHz": 21, "dbPer100m": 1.23 },
+        { "frequencyMHz": 28, "dbPer100m": 1.43 },
+        { "frequencyMHz": 50, "dbPer100m": 1.95 },
+        { "frequencyMHz": 144, "dbPer100m": 3.42 },
+        { "frequencyMHz": 432, "dbPer100m": 6.17 },
+        { "frequencyMHz": 1296, "dbPer100m": 11.25 },
+        { "frequencyMHz": 2400, "dbPer100m": 15.90 },
+        { "frequencyMHz": 5760, "dbPer100m": 26.25 }
+      ]
+    },
+    {
+      "id": "nf400",
+      "name": "NF-400",
+      "impedance": 50,
+      "velocityFactor": 0.85,
+      "description": "NexAnt/RF Industries, LMR-400 Alternative, 10.3mm Durchmesser",
+      "attenuation": [
+        { "frequencyMHz": 1, "dbPer100m": 0.26 },
+        { "frequencyMHz": 3.5, "dbPer100m": 0.51 },
+        { "frequencyMHz": 7, "dbPer100m": 0.74 },
+        { "frequencyMHz": 14, "dbPer100m": 1.07 },
+        { "frequencyMHz": 21, "dbPer100m": 1.33 },
+        { "frequencyMHz": 28, "dbPer100m": 1.55 },
+        { "frequencyMHz": 50, "dbPer100m": 2.10 },
+        { "frequencyMHz": 144, "dbPer100m": 3.70 },
+        { "frequencyMHz": 432, "dbPer100m": 6.65 },
+        { "frequencyMHz": 1296, "dbPer100m": 12.10 },
+        { "frequencyMHz": 2400, "dbPer100m": 17.10 },
+        { "frequencyMHz": 5760, "dbPer100m": 28.20 }
       ]
     }
   ],
