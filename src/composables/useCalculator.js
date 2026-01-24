@@ -20,7 +20,7 @@ export function useCalculator() {
   const selectedBandName = ref('');
 
   // Standard input powers for output calculation
-  const inputPowers = [5, 10, 100];
+  const inputPowers = [5, 10, 100, 200, 400, 500, 1000];
 
   // Computed: selected cable object
   const selectedCable = computed(() => {
