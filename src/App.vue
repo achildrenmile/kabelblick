@@ -203,9 +203,9 @@ watch(lang, (newLang) => {
 }
 
 .parent-logo {
-  height: 50px;
+  height: 150px;
   width: auto;
-  max-width: 120px;
+  max-width: 300px;
   object-fit: contain;
 }
 
@@ -313,7 +313,7 @@ watch(lang, (newLang) => {
   }
 
   .parent-logo {
-    height: 40px;
+    height: 80px;
   }
 }
 
