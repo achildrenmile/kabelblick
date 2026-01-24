@@ -1,7 +1,8 @@
 <script setup>
-import { ref, watch } from 'vue';
+import { ref, watch, onMounted } from 'vue';
 import { useCalculator } from './composables/useCalculator.js';
 import { useI18n } from './composables/useI18n.js';
+import { useConfig } from './composables/useConfig.js';
 import CableSelector from './components/CableSelector.vue';
 import FrequencyInput from './components/FrequencyInput.vue';
 import LengthInput from './components/LengthInput.vue';
@@ -25,6 +26,12 @@ const {
 } = useCalculator();
 
 const { t, lang, setLanguage } = useI18n();
+const { config, loadConfig } = useConfig();
+
+// Load config on mount
+onMounted(() => {
+  loadConfig();
+});
 
 // Legal modal state
 const showLegalModal = ref(false);
@@ -50,9 +57,25 @@ watch(lang, (newLang) => {
   <div class="app">
     <header class="header">
       <div class="header-content">
-        <div>
-          <h1>{{ t('title') }}</h1>
-          <p class="subtitle">{{ t('subtitle') }}</p>
+        <div class="header-left">
+          <a
+            v-if="config.parentSiteUrl && config.parentSiteLogo"
+            :href="config.parentSiteUrl"
+            target="_blank"
+            rel="noopener"
+            class="parent-logo-link"
+            :title="config.parentSiteName || 'Back to main site'"
+          >
+            <img
+              :src="config.parentSiteLogo"
+              :alt="config.parentSiteName || 'Logo'"
+              class="parent-logo"
+            />
+          </a>
+          <div class="title-block">
+            <h1>{{ t('title') }}</h1>
+            <p class="subtitle">{{ t('subtitle') }}</p>
+          </div>
         </div>
         <div class="lang-switch">
           <button
@@ -125,8 +148,10 @@ watch(lang, (newLang) => {
         <a href="https://github.com/achildrenmile/kabelblick" target="_blank" rel="noopener">GitHub</a>
       </div>
       <p class="footer-info">
-        {{ t('partOf') }} <a href="https://oeradio.at" target="_blank" rel="noopener">OERadio</a> {{ t('tools') }}
-        <span class="separator">•</span>
+        <template v-if="config.parentSiteUrl && config.parentSiteName">
+          {{ t('partOf') }} <a :href="config.parentSiteUrl" target="_blank" rel="noopener">{{ config.parentSiteName }}</a> {{ t('tools') }}
+          <span class="separator">•</span>
+        </template>
         v{{ dataVersion }}
       </p>
     </footer>
@@ -159,6 +184,34 @@ watch(lang, (newLang) => {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.parent-logo-link {
+  display: flex;
+  align-items: center;
+  transition: opacity 0.2s;
+}
+
+.parent-logo-link:hover {
+  opacity: 0.8;
+}
+
+.parent-logo {
+  height: 50px;
+  width: auto;
+  max-width: 120px;
+  object-fit: contain;
+}
+
+.title-block {
+  display: flex;
+  flex-direction: column;
 }
 
 .header h1 {
@@ -252,6 +305,15 @@ watch(lang, (newLang) => {
     flex-direction: column;
     text-align: center;
     gap: 1rem;
+  }
+
+  .header-left {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .parent-logo {
+    height: 40px;
   }
 }
 
