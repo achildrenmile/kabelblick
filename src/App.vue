@@ -101,7 +101,7 @@ function openPrivacy() {
       <p class="footer-info">
         Teil der <a href="https://oeradio.at" target="_blank" rel="noopener">OERadio</a> Tools
         <span class="separator">•</span>
-        Daten v{{ dataVersion }}
+        v{{ dataVersion }}
       </p>
     </footer>
 
